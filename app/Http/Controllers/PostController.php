@@ -30,6 +30,11 @@ class PostController extends Controller
             'image' => ''
         ]);
         Post::create($data);
+        return redirect()->route('lidl');
+    }
+    public function show(Post $post)
+    {
+        return view('posts.show', compact('post'));
     }
 
     public function delete()
